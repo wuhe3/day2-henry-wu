@@ -9,7 +9,7 @@ public class MultiplicationTableBuilder {
         return start <= end;
     }
 
-    public boolean isInputValid(int startNum, int endNum) {
+    public boolean isValid(int startNum, int endNum) {
         return isStarterNotBiggerThanEnd(startNum, endNum) && isInRange(startNum) && isInRange(endNum);
     }
 }
