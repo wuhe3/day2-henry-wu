@@ -19,4 +19,23 @@ class MultiplicationTableBuilderTest {
     }
 
     // TODO: add more tests for isInRange
+
+    @Test
+    void should_return_false_when_isInRange_given_a_number_0() {
+        // Given
+        MultiplicationTableBuilder multiplicationTableBuilder = new MultiplicationTableBuilder();
+        int number = 0;
+
+        // When
+        boolean isInRange = multiplicationTableBuilder.isInRange(number);
+
+        // Then
+        assertFalse(isInRange);
+    }
+
+    //1001
+
+
+
+
 }
