@@ -3,6 +3,7 @@ package com.tw;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class MultiplicationTableBuilderTest {
     @Test
@@ -46,6 +47,19 @@ class MultiplicationTableBuilderTest {
         assertFalse(isInRange);
     }
 
+    @Test
+    void should_return_true_when_isStarterNotBiggerThanEnd_given_2_and_3() {
+        // Given
+        MultiplicationTableBuilder multiplicationTableBuilder = new MultiplicationTableBuilder();
+        int start = 2;
+        int end = 3;
+
+        // When
+        boolean isStarterNotBiggerThanEnd = multiplicationTableBuilder.isStarterNotBiggerThanEnd(start, end);
+
+        // Then
+        assertTrue(isStarterNotBiggerThanEnd);
+    }
 
 
 
