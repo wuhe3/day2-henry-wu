@@ -89,6 +89,26 @@ class MultiplicationTableBuilderTest {
         assertTrue(isStarterNotBiggerThanEnd);
     }
 
+    // 2,3 t
+    // 2,1 f
+    // 0,2 f
+    // 2,1001 f
+    @Test
+    void should_return_true_when_isValid_given_2_and_3() {
+        // Given
+        MultiplicationTableBuilder multiplicationTableBuilder = new MultiplicationTableBuilder();
+        int start = 2;
+        int end = 3;
+
+        // When
+        boolean isValid = multiplicationTableBuilder.isValid(start, end);
+
+        // Then
+        assertTrue(isValid);
+
+    }
+
+
 
 
 }
