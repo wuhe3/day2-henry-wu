@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MultiplicationTableBuilderTest {
     @Test
@@ -89,11 +90,6 @@ class MultiplicationTableBuilderTest {
         assertTrue(isStarterNotBiggerThanEnd);
     }
 
-    // 2,3 t
-    // 2,1 f
-    // 0,2 f
-    // 2,1001 f
-    // 1001,2 f
     @Test
     void should_return_true_when_isValid_given_2_and_3() {
         // Given
@@ -164,5 +160,22 @@ class MultiplicationTableBuilderTest {
         assertFalse(isValid);
     }
 
+    // generateTable
+    // given 2,4 return '2*2=4\n2*3=6 3*3=9\n2*4=8 3*4=12 4*4=16\n'
+
+    @Test
+    void should_return_multiplication_table_when_generateTable_given_2_and_4() {
+        // Given
+        MultiplicationTableBuilder multiplicationTableBuilder = new MultiplicationTableBuilder();
+        int start = 2;
+        int end = 4;
+
+        // When
+        String multiplicationTable = multiplicationTableBuilder.generateTable(start, end);
+        String expectedMultiplicationTable = String.format("2*2=4%n2*3=6 3*3=9%n2*4=8 3*4=12 4*4=16%n");
+
+        // Then
+        assertEquals(expectedMultiplicationTable, multiplicationTable);
+    }
 
 }
